@@ -1,0 +1,20 @@
+running develop
+running egg_info
+creating localisation_sim.egg-info
+writing localisation_sim.egg-info/PKG-INFO
+writing dependency_links to localisation_sim.egg-info/dependency_links.txt
+writing requirements to localisation_sim.egg-info/requires.txt
+writing top-level names to localisation_sim.egg-info/top_level.txt
+writing manifest file 'localisation_sim.egg-info/SOURCES.txt'
+reading manifest file 'localisation_sim.egg-info/SOURCES.txt'
+writing manifest file 'localisation_sim.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/yaqeen/robot_localisation_ws/install/localisation_sim/lib/python3.12/site-packages/localisation-sim.egg-link (link to .)
+
+Installed /home/yaqeen/robot_localisation_ws/build/localisation_sim
+running symlink_data
+creating /home/yaqeen/robot_localisation_ws/install/localisation_sim/share/ament_index
+creating /home/yaqeen/robot_localisation_ws/install/localisation_sim/share/ament_index/resource_index
+creating /home/yaqeen/robot_localisation_ws/install/localisation_sim/share/ament_index/resource_index/packages
+symbolically linking /home/yaqeen/robot_localisation_ws/build/localisation_sim/resource/localisation_sim -> /home/yaqeen/robot_localisation_ws/install/localisation_sim/share/ament_index/resource_index/packages
+symbolically linking /home/yaqeen/robot_localisation_ws/build/localisation_sim/package.xml -> /home/yaqeen/robot_localisation_ws/install/localisation_sim/share/localisation_sim

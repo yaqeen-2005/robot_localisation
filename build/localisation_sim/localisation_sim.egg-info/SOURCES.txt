@@ -1,0 +1,11 @@
+package.xml
+setup.cfg
+setup.py
+localisation_sim/__init__.py
+localisation_sim.egg-info/PKG-INFO
+localisation_sim.egg-info/SOURCES.txt
+localisation_sim.egg-info/dependency_links.txt
+localisation_sim.egg-info/requires.txt
+localisation_sim.egg-info/top_level.txt
+localisation_sim.egg-info/zip-safe
+resource/localisation_sim
