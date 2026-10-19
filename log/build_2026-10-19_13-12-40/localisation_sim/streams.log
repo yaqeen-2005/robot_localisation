@@ -1,0 +1,15 @@
+[0.826s] Invoking command in '/home/yaqeen/robot_localisation_ws/build/localisation_sim': PYTHONPATH=/home/yaqeen/robot_localisation_ws/build/localisation_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yaqeen/robot_localisation_ws/install/localisation_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/yaqeen/robot_localisation_ws/build/localisation_sim/build --no-deps symlink_data
+[1.002s] running develop
+[1.102s] running egg_info
+[1.112s] writing localisation_sim.egg-info/PKG-INFO
+[1.113s] writing dependency_links to localisation_sim.egg-info/dependency_links.txt
+[1.113s] writing requirements to localisation_sim.egg-info/requires.txt
+[1.113s] writing top-level names to localisation_sim.egg-info/top_level.txt
+[1.134s] reading manifest file 'localisation_sim.egg-info/SOURCES.txt'
+[1.135s] writing manifest file 'localisation_sim.egg-info/SOURCES.txt'
+[1.147s] running build_ext
+[1.148s] Creating /home/yaqeen/robot_localisation_ws/install/localisation_sim/lib/python3.12/site-packages/localisation-sim.egg-link (link to .)
+[1.148s] 
+[1.148s] Installed /home/yaqeen/robot_localisation_ws/build/localisation_sim
+[1.148s] running symlink_data
+[1.172s] Invoked command in '/home/yaqeen/robot_localisation_ws/build/localisation_sim' returned '0': PYTHONPATH=/home/yaqeen/robot_localisation_ws/build/localisation_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yaqeen/robot_localisation_ws/install/localisation_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/yaqeen/robot_localisation_ws/build/localisation_sim/build --no-deps symlink_data
