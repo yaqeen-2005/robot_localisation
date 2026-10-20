@@ -156,6 +156,15 @@
         <radius>0.05</radius>
       </sphere>
     </geometry>
+
+    <surface>
+      <friction>
+        <ode>
+          <mu>0.001</mu>
+          <mu2>0.001</mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 
   <visual name="support_visual">
@@ -164,6 +173,7 @@
         <radius>0.05</radius>
       </sphere>
     </geometry>
+
     <material>
       <ambient>0.8 0.8 0.8 1</ambient>
       <diffuse>0.8 0.8 0.8 1</diffuse>
