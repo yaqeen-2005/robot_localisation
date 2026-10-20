@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="differential_robot">
+<plugin
+  filename="gz-sim-diff-drive-system"
+  name="gz::sim::systems::DiffDrive">
+
+  <left_joint>left_wheel_joint</left_joint>
+  <right_joint>right_wheel_joint</right_joint>
+
+  <wheel_separation>0.34</wheel_separation>
+  <wheel_radius>0.08</wheel_radius>
+
+  <topic>/cmd_vel</topic>
+  <odom_topic>/odom</odom_topic>
+
+</plugin>
+    <pose>0 0 0.2 0 0 0</pose>
+
+    <link name="chassis">
+      <inertial>
+        <mass>2.0</mass>
+        <inertia>
+          <ixx>0.02</ixx>
+          <iyy>0.02</iyy>
+          <izz>0.04</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="chassis_collision">
+        <geometry>
+          <box>
+            <size>0.4 0.3 0.15</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="chassis_visual">
+        <geometry>
+          <box>
+            <size>0.4 0.3 0.15</size>
+          </box>
+        </geometry>
+<material>
+    <ambient>0 0 1 1</ambient>
+    <diffuse>0 0 1 1</diffuse>
+  </material>      
+</visual>
+    </link>
+<link name="left_wheel">
+  <pose>0 0.17 -0.07 1.5708 0 0</pose>
+   <inertial>
+    <mass>0.2</mass>
+    <inertia>
+      <ixx>0.001</ixx>
+      <iyy>0.001</iyy>
+      <izz>0.001</izz>
+    </inertia>
+  </inertial>
+
+  <collision name="left_wheel_collision">
+    <geometry>
+      <cylinder>
+        <radius>0.08</radius>
+        <length>0.04</length>
+      </cylinder>
+    </geometry>
+  </collision>
+
+  <visual name="left_wheel_visual">
+    <geometry>
+      <cylinder>
+        <radius>0.08</radius>
+        <length>0.04</length>
+      </cylinder>
+    </geometry>
+<material>
+  <ambient>1 0 0 1</ambient>
+  <diffuse>1 0 0 1</diffuse>
+</material>
+  </visual>
+</link>
+<link name="right_wheel">
+<pose>0 -0.17 -0.07 1.5708 0 0</pose>
+  <inertial>
+    <mass>0.2</mass>
+    <inertia>
+      <ixx>0.001</ixx>
+      <iyy>0.001</iyy>
+      <izz>0.001</izz>
+    </inertia>
+  </inertial>
+
+  <collision name="right_wheel_collision">
+    <geometry>
+      <cylinder>
+        <radius>0.08</radius>
+        <length>0.04</length>
+      </cylinder>
+    </geometry>
+  </collision>
+
+  <visual name="right_wheel_visual">    
+<geometry>
+      <cylinder>
+        <radius>0.08</radius>
+        <length>0.04</length>
+      </cylinder>
+    </geometry>
+<material>
+  <ambient>0 1 0 1</ambient>
+  <diffuse>0 1 0 1</diffuse>
+</material>
+  </visual>
+</link>
+
+<joint name="left_wheel_joint" type="revolute">
+  <parent>chassis</parent>
+  <child>left_wheel</child>
+
+  <axis>
+    <xyz>0 0 1</xyz>
+    <limit>
+      <lower>-1e16</lower>
+      <upper>1e16</upper>
+    </limit>
+  </axis>
+</joint>
+<joint name="right_wheel_joint" type="revolute">
+  <parent>chassis</parent>
+  <child>right_wheel</child>
+
+  <axis>
+    <xyz>0 0 1</xyz>
+    <limit>
+      <lower>-1e16</lower>
+      <upper>1e16</upper>
+    </limit>
+  </axis>
+</joint>
+<link name="rear_support">
+  <pose>-0.15 0 -0.10 0 0 0</pose>
+
+  <inertial>
+    <mass>0.05</mass>
+    <inertia>
+      <ixx>0.0001</ixx>
+      <iyy>0.0001</iyy>
+      <izz>0.0001</izz>
+    </inertia>
+  </inertial>
+
+  <collision name="support_collision">
+    <geometry>
+      <sphere>
+        <radius>0.05</radius>
+      </sphere>
+    </geometry>
+  </collision>
+
+  <visual name="support_visual">
+    <geometry>
+      <sphere>
+        <radius>0.05</radius>
+      </sphere>
+    </geometry>
+    <material>
+      <ambient>0.8 0.8 0.8 1</ambient>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+    </material>
+  </visual>
+</link>
+
+<joint name="support_joint" type="fixed">
+  <parent>chassis</parent>
+  <child>rear_support</child>
+</joint>
+  </model>
+
+</sdf>
+
