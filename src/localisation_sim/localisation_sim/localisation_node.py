@@ -3,6 +3,7 @@ import math
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
 import random
+import csv
 
 class localisationNode(Node):
 	def __init__(self):
@@ -13,6 +14,9 @@ class localisationNode(Node):
 		self.dt = 0.0
 		self.previous_time = None
 		self.theta = 0.0
+		self.csv_file = open('estimated_trajectory.csv', 'w', newline='')
+		self.csv_writer = csv.writer(self.csv_file)
+		self.csv_writer.writerow(['time', 'x', 'y', 'theta'])
 	def odom_callback(self, msg):
 		x = msg.pose.pose.position.x
 		y = msg.pose.pose.position.y
@@ -38,8 +42,17 @@ class localisationNode(Node):
 
 		self.x += v * math.cos(self.theta) * self.dt
 		self.y += v * math.sin(self.theta) * self.dt
-		self.get_logger().info( f"Estimated: x={self.x:.3f}, "
-    		f"y={self.y:.3f}, theta={self.theta:.3f}")
+		self.csv_writer.writerow([
+    		current_time,
+    		self.x,
+    		self.y,
+    		self.theta
+		])
+		self.csv_file.flush()
+		self.get_logger().info( f"Estimated: x={self.x:.3f}, "f"y={self.y:.3f}, theta={self.theta:.3f}")
+	def destroy_node(self):
+		self.csv_file.close()
+		return super().destroy_node()
 		
 def main():
     rclpy.init()
